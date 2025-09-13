@@ -9,7 +9,7 @@ st.title("💡 Startup Funding & Scholarship Finder")
 
 # Instructions
 st.write("""
-Welcome! 🎉  
+Welcome to Operations Sync
 Enter your information below, and this tool will generate a report of possible **organizations, funds, and scholarships**  
 available for startups and businesses in your city and country.
 """)
