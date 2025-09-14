@@ -20,6 +20,7 @@ st.write("Enter customer details to find **funds, organizations, and scholarship
 with st.form("customer_info"):
     name = st.text_input("Customer Name")
     age = st.number_input("Age of Founder(s)", min_value=18, max_value=100, step=1)
+    age_company = st.number_input("Age of the company (in years)", min_value=0, max_value=200, step=1)
     education = st.text_input("Educational Background")
     minority = st.checkbox("Are you part of a minority/underrepresented group?")
     city = st.text_input("City")
