@@ -7,18 +7,18 @@ import io
 #logo
 st.image("logo.png", width=200)
 
-#logo centered
-st.markdown(
-    """
-    <div style="text-align: center;">
-        <img src="logo.png" width="200">
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+# #logo centered
+# st.markdown(
+#     """
+#     <div style="text-align: center;">
+#         <img src="logo.png" width="200">
+#     </div>
+#     """,
+#     unsafe_allow_html=True
+# )
 
-st.title("Funding & Grant Finder Dashboard")
-st.write("Provide your company and founder information to get tailored reports on available funding, grants, and scholarships.")
+# st.title("Funding & Grant Finder Dashboard")
+# st.write("Provide your company and founder information to get tailored reports on available funding, grants, and scholarships.")
 
 # Configure Gemini API
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
