@@ -4,6 +4,9 @@ from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 import io
 
+#logo
+st.image("logo.png", width=200)
+
 # Configure Gemini API
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 model = genai.GenerativeModel("gemini-1.5-flash")
