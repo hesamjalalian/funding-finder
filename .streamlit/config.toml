@@ -1,6 +1,0 @@
-[theme]
-primaryColor = "#FFD700"          # Yellow
-backgroundColor = "#001F3F"       # Dark Blue
-secondaryBackgroundColor = "#003366"  # Lighter dark blue for contrast
-textColor = "#FFFFFF"             # White text
-font = "sans serif"
