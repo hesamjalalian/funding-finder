@@ -7,15 +7,6 @@ import io
 #logo
 st.image("logo.png", width=200)
 
-#logo centered
-st.markdown(
-    """
-    <div style="text-align: center;">
-        <img src="logo.png" width="200">
-    </div>
-    """,
-    unsafe_allow_html=True
-)
 
 # Configure Gemini API
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
