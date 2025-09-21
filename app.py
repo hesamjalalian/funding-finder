@@ -13,7 +13,7 @@ genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 model = genai.GenerativeModel("gemini-1.5-flash")
 
 st.title("The Mission Funding Accelerator")
-st.write(""Stop Searching, Start Impacting. Unlock Your NextFunding Opportunity"")
+st.write("Stop Searching, Start Impacting. Unlock Your NextFunding Opportunity")
 
 # Collect customer information
 st.header("Customer & Startup Information")
