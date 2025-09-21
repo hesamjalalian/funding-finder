@@ -14,8 +14,7 @@ model = genai.GenerativeModel("gemini-1.5-flash")
 
 st.title("The Mission Funding Accelerator")
 st.write("Stop Searching, Start Impacting. Unlock Your NextFunding Opportunity.")
-st.write("Our AI scans hundreds of funds and grants to find the perfect match for your mission. Answer a few questions below to get a personalized report in minutes, get a curated list of opportunities perfectly matched to your mission and get back to the work
-that matters.")
+st.write("Our AI scans hundreds of funds and grants to find the perfect match for your mission. Answer a few questions below to get a personalized report in minutes, get a curated list of opportunities perfectly matched to your mission and get back to the workthat matters.")
 
     
 # Collect customer information
