@@ -12,8 +12,8 @@ st.image("logo.png", width=200)
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 model = genai.GenerativeModel("gemini-1.5-flash")
 
-st.title("Funding & Grant Finder Dashboard")
-st.write("Provide your company and founder information to get tailored reports on available funding, grants, and scholarships.")
+st.title("The Mission Funding Accelerator")
+st.write(""Stop Searching, Start Impacting. Unlock Your NextFunding Opportunity"")
 
 # Collect customer information
 st.header("Customer & Startup Information")
