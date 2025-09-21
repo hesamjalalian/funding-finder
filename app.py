@@ -38,6 +38,35 @@ st.write("Our AI scans hundreds of funds and grants to find the perfect match fo
 # Collect customer information
 st.header("Customer & Startup Information")
 
+organization_name = st.text_input("Tell Us About Your Organization")
+
+primary_focus = st.selectbox(
+    "Primary Focus",
+    [
+        "Agriculture: Cultivation, livestock farming, fishing, forestry",
+        "Industry / Manufacturing: Production of goods, heavy and light manufacturing",
+        "Services (General): Trade, logistics, transportation, consulting, business support, legal, accounting",
+        "Governmental / Para-Governmental Organizations: Public administration, municipal/provincial/federal agencies, crown corporations",
+        "Health Services: Hospitals, clinics, medical practices, mental health therapy, medical research",
+        "Community & Social Services: Food banks, shelters, youth programs, senior support, social advocacy",
+        "Education: Schools, universities, vocational training, adult learning",
+        "IT and Technology: Software development, IT consulting, online platforms, telecommunications",
+        "Finance: Banking, insurance, investment, FinTech",
+        "Energy: Electricity, gas, oil, renewable energy",
+        "Media and Communication: TV, radio, journalism, publishing, PR, advertising",
+        "Arts & Culture: Museums, galleries, theaters, performing arts, heritage",
+        "Tourism and Hospitality: Hotels, restaurants, travel agencies, event management",
+        "Construction: Building construction, infrastructure development, real estate",
+        "Retail: Sales of goods (clothing, groceries, electronics)",
+        "Non-Governmental Organizations (NGOs): Humanitarian aid, development, environment, human rights",
+        "Religious Organizations: Churches, mosques, temples, synagogues, faith-based initiatives",
+        "Mission-Driven Startups / Innovative Businesses: Social/environmental impact + innovative models",
+        "Social Enterprise: Businesses with a social/environmental mission reinvesting profits",
+        "Sustainability / Environmental: Conservation, climate action, sustainable development, eco-advocacy",
+        "Research & Development: Academic, corporate, or independent research institutions",
+        "Other (please specify)"
+    ]
+)
 city = st.text_input("City")
 country = st.text_input("Country")
 age_company = st.number_input("Age of the company (in years)", min_value=0, max_value=200, step=1)
