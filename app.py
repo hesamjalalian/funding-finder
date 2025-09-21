@@ -5,12 +5,13 @@ from reportlab.pdfgen import canvas
 import io
 import streamlit as st
 
+## logo
 col1, col2, col3 = st.columns([1,3,1])  # middle column is bigger
 with col2:
     st.image("logo.png", width=400)
 
-# #logo
-# st.image("logo.png", width=200)
+
+st.caption("A complimentary tool from Operations.Sync — We helpyou Simplify & Accelerate Your Operations and Redeem your Time: automatewhat you can, humanize what you must.")
 
 
 # Configure Gemini API
