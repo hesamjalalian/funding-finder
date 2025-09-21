@@ -11,7 +11,7 @@ with col2:
     st.image("logo.png", width=400)
 
 
-st.caption("A complimentary tool from Operations.Sync — We helpyou Simplify & Accelerate Your Operations and Redeem your Time: automatewhat you can, humanize what you must.")
+
 
 
 # Configure Gemini API
@@ -20,6 +20,9 @@ model = genai.GenerativeModel("gemini-1.5-flash")
 
 st.title("The Mission Funding Accelerator")
 st.markdown("**Stop Searching, Start Impacting. Unlock Your Next Funding Opportunity.**")
+
+st.caption("A complimentary tool from Operations.Sync — We helpyou Simplify & Accelerate Your Operations and Redeem your Time: automatewhat you can, humanize what you must.")
+
 st.write("Our AI scans hundreds of funds and grants to find the perfect match for your mission. Answer a few questions below to get a personalized report in minutes, get a curated list of opportunities perfectly matched to your mission and get back to the workthat matters.")
 
     
