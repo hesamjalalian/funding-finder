@@ -19,7 +19,16 @@ genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 model = genai.GenerativeModel("gemini-1.5-flash")
 
 st.title("The Mission Funding Accelerator")
-st.markdown("**Stop Searching, Start Impacting. Unlock Your Next Funding Opportunity.**")
+# st.markdown("**Stop Searching, Start Impacting. Unlock Your Next Funding Opportunity.**")
+
+st.markdown(
+    """
+    <h3 style="text-align: center;">
+        <b>Stop Searching, Start Impacting. Unlock Your Next Funding Opportunity.</b>
+    </h3>
+    """,
+    unsafe_allow_html=True
+)
 
 st.caption("A complimentary tool from Operations.Sync — We helpyou Simplify & Accelerate Your Operations and Redeem your Time: automatewhat you can, humanize what you must.")
 
