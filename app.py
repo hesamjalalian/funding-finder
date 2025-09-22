@@ -76,6 +76,32 @@ minority_status = st.multiselect(
         "Other (please specify)"
     ]
 )
+racialized_group = st.multiselect(
+    "Racialized Group (select all that apply, or specify):",
+    [
+        "South Asian",
+        "Chinese",
+        "Black",
+        "Filipino",
+        "Arab",
+        "Latin American",
+        "Southeast Asian",
+        "West Asian",
+        "Korean",
+        "Japanese",
+        "Another racialized population group",
+        "Women / Girls",
+        "Youth (Ages 16-29)",
+        "Seniors (Ages 65+)",
+        "Low-Income / Economically Disadvantaged Individuals",
+        "Newcomers / Immigrants / Refugees",
+        "None of the above / Not applicable"
+    ]
+)
+
+racialized_group_other = None
+if "Another racialized population group" in racialized_group:
+    racialized_group_other = st.text_input("Please specify the other racialized group")
 city = st.text_input("City")
 country = st.text_input("Country")
 age_company = st.number_input("Age of the company (in years)", min_value=0, max_value=200, step=1)
