@@ -179,9 +179,24 @@ business_type = st.selectbox("Type of business", ["Tech-based", "Research-based"
 website = st.text_input("Company Website (optional)")
 
 # Section: Upload supporting text (CV, Website content, etc.)
+# st.header("Upload Supporting Text")
+# uploaded_summary = ""
+# uploaded_file = st.file_uploader("Upload a text file (CV, website content, etc.)", type=["txt"])
+
 st.header("Upload Supporting Text")
+
+st.write(
+    "Upload a Business Plan, Business Model, or any relevant documentation "
+    "about your organization such as a description from your 'About Us' page, "
+    "a recent newsletter, or a project summary. The more detail, the better our AI "
+    "can match you with the right funders. This is much easier and achieves the same goal."
+)
+
 uploaded_summary = ""
-uploaded_file = st.file_uploader("Upload a text file (CV, website content, etc.)", type=["txt"])
+uploaded_file = st.file_uploader(
+    "Upload a text file (CV, website content, etc.)", 
+    type=["txt"]
+)
 
 if uploaded_file is not None:
     text_content = uploaded_file.read().decode("utf-8")
