@@ -161,7 +161,20 @@ annual_revenue = st.multiselect(
         "Other (please specify)"
     ]
 )
-primary_need = st.text_area("Primary business need (funding, networking, research, etc.)")
+st.subheader("Primary Business Need")
+
+primary_need = st.multiselect(
+    "Select your organization’s primary business needs:",
+    [
+        "Grant Funding",
+        "Operational Support",
+        "Project-Specific Funding",
+        "Networking",
+        "Mentorship",
+        "Other (please specify)"
+    ]
+)
+# primary_need = st.text_area("Primary business need (funding, networking, research, etc.)")
 business_type = st.selectbox("Type of business", ["Tech-based", "Research-based", "Traditional"])
 website = st.text_input("Company Website (optional)")
 
