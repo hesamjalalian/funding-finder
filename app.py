@@ -99,9 +99,9 @@ racialized_group = st.multiselect(
     ]
 )
 
-racialized_group_other = None
-if "Another racialized population group" in racialized_group:
-    racialized_group_other = st.text_input("Please specify the other racialized group")
+# racialized_group_other = None
+# if "Another racialized population group" in racialized_group:
+#     racialized_group_other = st.text_input("Please specify the other racialized group")
 city = st.text_input("City")
 country = st.text_input("Country")
 age_company = st.number_input("Age of the company (in years)", min_value=0, max_value=200, step=1)
