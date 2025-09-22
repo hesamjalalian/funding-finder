@@ -67,6 +67,15 @@ primary_focus = st.selectbox(
         "Other (please specify)"
     ]
 )
+minority_status = st.multiselect(
+    "Serving Minority / Underrepresented Group Status",
+    [
+        "Indigenous Peoples / Aboriginal Peoples: First Nations, Inuit, or Métis (as per Canadian legal definitions of 'Aboriginal peoples')",
+        "Persons with Disabilities: Individuals with long-term or recurring physical, mental, sensory, psychiatric, or learning impairments",
+        "LGBTQ2+ Individuals: Lesbian, Gay, Bisexual, Transgender, Queer, Two-Spirit, or other diverse sexual orientations and gender identities",
+        "Other (please specify)"
+    ]
+)
 city = st.text_input("City")
 country = st.text_input("Country")
 age_company = st.number_input("Age of the company (in years)", min_value=0, max_value=200, step=1)
