@@ -128,7 +128,19 @@ else:
     team_category = "More than 50"
 
 st.write(f"**Selected Team Size:** {team_category}")
-annual_revenue = st.number_input("Annual revenue (USD)", min_value=0, step=1000)
+# annual_revenue = st.number_input("Annual revenue (USD)", min_value=0, step=1000)
+st.subheader("Annual Revenue")
+
+annual_revenue = st.multiselect(
+    "Select your organization's approximate annual revenue:",
+    [
+        "$0 - $50k",
+        "$50k - $250k",
+        "$250k - $1M",
+        "$1M+",
+        "Other (please specify)"
+    ]
+)
 primary_need = st.text_area("Primary business need (funding, networking, research, etc.)")
 business_type = st.selectbox("Type of business", ["Tech-based", "Research-based", "Traditional"])
 website = st.text_input("Company Website (optional)")
