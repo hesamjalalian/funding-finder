@@ -107,12 +107,16 @@ business_registration = st.selectbox("Business registration status", ["Registere
 # num_employees = st.number_input("Number of employees", min_value=0, step=1)
 st.subheader("Number of Team Members (including volunteers)")
 
-team_size = st.slider(
-    "Select the number of people in your organization:",
-    min_value=1,
-    max_value=100,
-    value=1,
-    step=1
+team_members = st.multiselect(
+    "Select the size of your team:",
+    [
+        "Solo entrepreneur (self-employed / freelancer)",
+        "2 to 5",
+        "5 to 10",
+        "10 to 50",
+        "More than 50",
+        "Other (please specify)"
+    ]
 )
 st.subheader("Annual Operating Budget")
 
