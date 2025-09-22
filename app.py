@@ -103,7 +103,22 @@ country = st.text_input("Country")
 age_company = st.number_input("Age of Organization / Year Founded or to be Launched)", min_value=0, max_value=200, step=1)
 education = st.text_input("Educational background of founder(s)")
 # minority_status = st.selectbox("Minority / underrepresented group status?", ["Yes", "No", "Prefer not to say"])
-business_registration = st.selectbox("Business registration status", ["Registered", "Not Registered"])
+st.subheader("Business Registration Status")
+
+business_status = st.multiselect(
+    "Select your business registration status:",
+    [
+        "Not yet registered / Informal Group",
+        "Sole Proprietorship / Auto-entreprise",
+        "Partnership (General or Limited)",
+        "Limited Liability Company (LLC) / Société à Responsabilité Limitée (SARL)",
+        "For-Profit Corporation / Société par Actions",
+        "Non-Profit Organization / Organisme à But Non Lucratif (OBNL)",
+        "Registered Charity / Organisme de Bienfaisance Enregistré",
+        "Cooperative / Coopérative",
+        "Other (please specify)"
+    ]
+)
 # num_employees = st.number_input("Number of employees", min_value=0, step=1)
 st.subheader("Number of Team Members (including volunteers)")
 
