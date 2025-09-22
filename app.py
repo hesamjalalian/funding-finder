@@ -114,6 +114,19 @@ team_size = st.slider(
     value=1,
     step=1
 )
+st.subheader("Annual Operating Budget")
+
+annual_budget = st.multiselect(
+    "Select your organization's approximate annual operating budget:",
+    [
+        "$0 - $50k",
+        "$50k - $250k",
+        "$250k - $1M",
+        "$1M+",
+        "I do not wish to share",
+        "Other (please specify)"
+    ]
+)
 
 # Map the numeric slider to categories
 if team_size == 1:
