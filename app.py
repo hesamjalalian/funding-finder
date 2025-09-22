@@ -104,7 +104,30 @@ age_company = st.number_input("Age of Organization / Year Founded or to be Launc
 education = st.text_input("Educational background of founder(s)")
 minority_status = st.selectbox("Minority / underrepresented group status?", ["Yes", "No", "Prefer not to say"])
 business_registration = st.selectbox("Business registration status", ["Registered", "Not Registered"])
-num_employees = st.number_input("Number of employees", min_value=0, step=1)
+# num_employees = st.number_input("Number of employees", min_value=0, step=1)
+st.subheader("Number of Team Members (including volunteers)")
+
+team_size = st.slider(
+    "Select the number of people in your organization:",
+    min_value=1,
+    max_value=100,
+    value=1,
+    step=1
+)
+
+# Map the numeric slider to categories
+if team_size == 1:
+    team_category = "Solo entrepreneur (self-employed / freelancer)"
+elif 2 <= team_size <= 5:
+    team_category = "2 to 5"
+elif 6 <= team_size <= 10:
+    team_category = "5 to 10"
+elif 11 <= team_size <= 50:
+    team_category = "10 to 50"
+else:
+    team_category = "More than 50"
+
+st.write(f"**Selected Team Size:** {team_category}")
 annual_revenue = st.number_input("Annual revenue (USD)", min_value=0, step=1000)
 primary_need = st.text_area("Primary business need (funding, networking, research, etc.)")
 business_type = st.selectbox("Type of business", ["Tech-based", "Research-based", "Traditional"])
