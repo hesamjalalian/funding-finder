@@ -118,6 +118,7 @@ team_members = st.multiselect(
         "Other (please specify)"
     ]
 )
+
 st.subheader("Annual Operating Budget")
 
 annual_budget = st.multiselect(
@@ -132,19 +133,6 @@ annual_budget = st.multiselect(
     ]
 )
 
-# Map the numeric slider to categories
-if team_size == 1:
-    team_category = "Solo entrepreneur (self-employed / freelancer)"
-elif 2 <= team_size <= 5:
-    team_category = "2 to 5"
-elif 6 <= team_size <= 10:
-    team_category = "5 to 10"
-elif 11 <= team_size <= 50:
-    team_category = "10 to 50"
-else:
-    team_category = "More than 50"
-
-st.write(f"**Selected Team Size:** {team_category}")
 # annual_revenue = st.number_input("Annual revenue (USD)", min_value=0, step=1000)
 st.subheader("Annual Revenue")
 
