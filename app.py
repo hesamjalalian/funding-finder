@@ -100,7 +100,7 @@ racialized_group = st.multiselect(
 )
 city = st.text_input("City")
 country = st.text_input("Country")
-age_company = st.number_input("Age of the company (in years)", min_value=0, max_value=200, step=1)
+age_company = st.number_input("Age of Organization / Year Founded or to be Launched)", min_value=0, max_value=200, step=1)
 education = st.text_input("Educational background of founder(s)")
 minority_status = st.selectbox("Minority / underrepresented group status?", ["Yes", "No", "Prefer not to say"])
 business_registration = st.selectbox("Business registration status", ["Registered", "Not Registered"])
