@@ -216,6 +216,29 @@ if uploaded_file is not None:
     except Exception as e:
         st.error(f"Error extracting information: {e}")
 
+st.header("Where should we send your report?")
+
+# Contact information
+your_name = st.text_input("Your Name")
+your_email = st.text_input("Your Email")
+your_phone = st.text_input("Your Phone Number")  # You can validate later for numbers
+founder_name = st.text_input("Founder’s Name")
+
+# Founder's education
+founder_education = st.selectbox(
+    "Founder's Education",
+    [
+        "High School",
+        "Bachelor's Degree",
+        "Master's Degree",
+        "PhD",
+        "Trade Certification"
+    ]
+)
+
+# Consent checkbox
+consent = st.checkbox("I agree to receive this report and occasional insights from Operations.Sync.")
+
 # Button to generate report
 if st.button("Generate Funding Report"):
     if not city or not country:
