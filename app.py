@@ -243,21 +243,24 @@ consent = st.checkbox("I agree to receive this report and occasional insights fr
 if st.button("Generate Funding Report"):
     if not city or not country:
         st.error("Please provide at least city and country to continue.")
+    elif not consent:
+        st.error("You must agree to receive the report before generating it.")
     else:
-        # Build the funding search prompt
+        # Build the funding search prompt with all collected data
         prompt = f"""
         The startup is located in {city}, {country}.
         Age of company: {age_company} years.
         Educational background of founders: {education}.
-        Minority / underrepresented status: {minority_status}.
-        Business registration: {business_registration}.
-        Employees: {num_employees}.
-        Annual revenue: {annual_revenue} USD.
-        Primary business need: {primary_need}.
+        Minority / underrepresented status: {', '.join(minority_status) if minority_status else 'N/A'}.
+        Racialized group / other: {', '.join(racialized_group) if racialized_group else 'N/A'}.
+        Business registration: {', '.join(business_status) if business_status else 'N/A'}.
+        Team size: {', '.join(team_members) if team_members else 'N/A'}.
+        Annual operating budget: {', '.join(annual_budget) if annual_budget else 'N/A'}.
+        Annual revenue: {', '.join(annual_revenue) if annual_revenue else 'N/A'}.
+        Primary business need: {', '.join(primary_need) if primary_need else 'N/A'}.
         Type of business: {business_type}.
-        Website: {website if website else "N/A"}.
-
-        Additional supporting details from uploaded text (if any): {uploaded_summary}
+        Website: {website if website else 'N/A'}.
+        Additional supporting details from uploaded text (if any): {uploaded_summary if uploaded_summary else 'N/A'}.
 
         Task:
         1. List at least 3 possible grants, scholarships, or funds available.
@@ -267,8 +270,11 @@ if st.button("Generate Funding Report"):
         """
 
         try:
-            response = model.generate_content(prompt)
-            report_text = response.text
+            # Show progress spinner while generating report
+            with st.spinner("Analyzing the data..."):
+                response = model.generate_content(prompt)
+                report_text = response.text
+
             st.subheader("Funding Report")
             st.write(report_text)
 
@@ -291,3 +297,56 @@ if st.button("Generate Funding Report"):
             )
         except Exception as e:
             st.error(f"Error generating report: {e}")
+
+# # Button to generate report
+# if st.button("Generate Funding Report"):
+#     if not city or not country:
+#         st.error("Please provide at least city and country to continue.")
+#     else:
+#         # Build the funding search prompt
+#         prompt = f"""
+#         The startup is located in {city}, {country}.
+#         Age of company: {age_company} years.
+#         Educational background of founders: {education}.
+#         Minority / underrepresented status: {minority_status}.
+#         Business registration: {business_registration}.
+#         Employees: {num_employees}.
+#         Annual revenue: {annual_revenue} USD.
+#         Primary business need: {primary_need}.
+#         Type of business: {business_type}.
+#         Website: {website if website else "N/A"}.
+
+#         Additional supporting details from uploaded text (if any): {uploaded_summary}
+
+#         Task:
+#         1. List at least 3 possible grants, scholarships, or funds available.
+#         2. For each, describe why the company might be eligible.
+#         3. Estimate the probability (0–100%) of winning each grant based on provided data.
+#         4. Provide advice to improve chances.
+#         """
+
+#         try:
+#             response = model.generate_content(prompt)
+#             report_text = response.text
+#             st.subheader("Funding Report")
+#             st.write(report_text)
+
+#             # Export to PDF
+#             buffer = io.BytesIO()
+#             pdf = canvas.Canvas(buffer, pagesize=letter)
+#             pdf.setFont("Helvetica", 10)
+#             text_object = pdf.beginText(40, 750)
+#             for line in report_text.split("\n"):
+#                 text_object.textLine(line)
+#             pdf.drawText(text_object)
+#             pdf.save()
+
+#             buffer.seek(0)
+#             st.download_button(
+#                 label="Download Report as PDF",
+#                 data=buffer,
+#                 file_name="funding_report.pdf",
+#                 mime="application/pdf"
+#             )
+#         except Exception as e:
+#             st.error(f"Error generating report: {e}")
