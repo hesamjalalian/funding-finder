@@ -264,9 +264,12 @@ if st.button("Generate Funding Report"):
 
         Task:
         1. List at least 3 possible grants, scholarships, or funds available.
-        2. For each, describe why the company might be eligible.
-        3. Estimate the probability (0–100%) of winning each grant based on provided data.
-        4. Provide advice to improve chances.
+        2. For each, provide:
+           - Name of the fund
+           - Direct link/URL to apply
+           - Why the company might be eligible
+           - Estimated probability (0–100%) of winning based on provided data
+           - Advice to improve chances
         """
 
         try:
