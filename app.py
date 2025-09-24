@@ -331,6 +331,60 @@ if st.button("Generate Funding Report"):
                 mime="application/pdf"
             )
 
+
+            # Save customer info into a PDF file first
+customer_info = f"""
+Customer Information
+
+            Name: {your_name}
+            Email: {your_email}
+            Phone: {your_phone}
+            Organization: {organization_name}
+            Founder: {founder_name}
+            Founder's Education: {founder_education}
+            City: {city}
+            Country: {country}
+            Age of Organization: {age_company} years
+            Education: {education}
+            Minority Status: {', '.join(minority_status) if minority_status else 'N/A'}
+            Racialized Group: {', '.join(racialized_group) if racialized_group else 'N/A'}
+            Business Registration: {', '.join(business_status) if business_status else 'N/A'}
+            Team Members: {', '.join(team_members) if team_members else 'N/A'}
+            Annual Operating Budget: {', '.join(annual_budget) if annual_budget else 'N/A'}
+            Annual Revenue: {', '.join(annual_revenue) if annual_revenue else 'N/A'}
+            Primary Business Need: {', '.join(primary_need) if primary_need else 'N/A'}
+            Type of Business: {business_type}
+            Website: {website if website else 'N/A'}
+            """
+            
+            info_buffer = io.BytesIO()
+            pdf_info = canvas.Canvas(info_buffer, pagesize=letter)
+            pdf_info.setFont("Helvetica", 10)
+            text_obj = pdf_info.beginText(40, 750)
+            for line in customer_info.split("\n"):
+                text_obj.textLine(line)
+            pdf_info.drawText(text_obj)
+            pdf_info.save()
+            info_buffer.seek(0)
+            
+            # Download button for customer info PDF
+            st.download_button(
+                label="Download Customer Info as PDF",
+                data=info_buffer,
+                file_name=f"{your_name}_information.pdf",
+                mime="application/pdf"
+            )
+            
+            # -------- NEW PART: Save automatically to Desktop ----------
+            import os
+            desktop_path = os.path.join(os.path.expanduser("~"), "Desktop", f"{your_name}_information.pdf")
+            with open(desktop_path, "wb") as f:
+                f.write(info_buffer.getbuffer())
+            
+            st.success(f"Customer information automatically saved to Desktop as {your_name}_information.pdf")
+            # ------------------------------------------------------------
+
+
             # Show progress spinner while generating funding report
             with st.spinner("Analyzing the data and fetching 20 tailored funding opportunities..."):
                 response = model.generate_content(prompt)
