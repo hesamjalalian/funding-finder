@@ -100,7 +100,7 @@ racialized_group = st.multiselect(
 )
 
 # Add Gender of Founder(s)
-st.subheader("Gender of Founder(s)")
+# st.subheader("Gender of Founder(s)")
 
 founder_gender = st.multiselect(
     "Select the gender identity of the founder(s):",
