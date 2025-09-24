@@ -341,29 +341,29 @@ if st.button("Generate Funding Report"):
 
             # Append customer info at the end of report
             customer_info = f"""
-            -------------------------------
-            Customer Information
+-------------------------------
+Customer Information
 
-            Name: {your_name}
-            Email: {your_email}
-            Phone: {your_phone}
-            Organization: {organization_name}
-            Founder: {founder_name}
-            Founder's Education: {founder_education}
-            City: {city}
-            Country: {country}
-            Age of Organization: {age_company} years
-            Education: {education}
-            Minority Status: {', '.join(minority_status) if minority_status else 'N/A'}
-            Racialized Group: {', '.join(racialized_group) if racialized_group else 'N/A'}
-            Business Registration: {', '.join(business_status) if business_status else 'N/A'}
-            Team Members: {', '.join(team_members) if team_members else 'N/A'}
-            Annual Operating Budget: {', '.join(annual_budget) if annual_budget else 'N/A'}
-            Annual Revenue: {', '.join(annual_revenue) if annual_revenue else 'N/A'}
-            Primary Business Need: {', '.join(primary_need) if primary_need else 'N/A'}
-            Type of Business: {business_type}
-            Website: {website if website else 'N/A'}
-            """
+Name: {your_name}
+Email: {your_email}
+Phone: {your_phone}
+Organization: {organization_name}
+Founder: {founder_name}
+Founder's Education: {founder_education}
+City: {city}
+Country: {country}
+Age of Organization: {age_company} years
+Education: {education}
+Minority Status: {', '.join(minority_status) if minority_status else 'N/A'}
+Racialized Group: {', '.join(racialized_group) if racialized_group else 'N/A'}
+Business Registration: {', '.join(business_status) if business_status else 'N/A'}
+Team Members: {', '.join(team_members) if team_members else 'N/A'}
+Annual Operating Budget: {', '.join(annual_budget) if annual_budget else 'N/A'}
+Annual Revenue: {', '.join(annual_revenue) if annual_revenue else 'N/A'}
+Primary Business Need: {', '.join(primary_need) if primary_need else 'N/A'}
+Type of Business: {business_type}
+Website: {website if website else 'N/A'}
+"""
             full_report = report_text + "\n\n" + customer_info
 
             # Display on Streamlit
@@ -390,3 +390,4 @@ if st.button("Generate Funding Report"):
 
         except Exception as e:
             st.error(f"Error generating report: {e}")
+
