@@ -11,7 +11,7 @@ with col2:
     st.image("logo.png", width=400)
 
 
-
+###
 
 
 # Configure Gemini API
