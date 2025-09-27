@@ -5,6 +5,9 @@ from reportlab.pdfgen import canvas
 import io
 import streamlit as st
 
+genai.configure(api_key="YOUR_KEY")
+print(genai.list_models())
+
 st.markdown("<h5 style='text-align: center;'>O.S ©</h5>", unsafe_allow_html=True)
 
 ## logo
