@@ -188,29 +188,18 @@ primary_community = st.multiselect(
     ]
 )
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-st.subheader("Primary Business Need")
+funding_purpose = st.selectbox(
+    "What will this funding primarily support?",
+    [
+        "Operational Costs (General Support)",
+        "A Specific Program or Project",
+        "Capacity Building (Hiring, Training)",
+        "Capital Projects (Buildings, Equipment)"
+    ]
+)
 
 primary_need = st.multiselect(
-    "Select your organization’s primary business needs:",
+    "Primary Business Need",
     [
         "Grant Funding",
         "Operational Support",
@@ -220,9 +209,13 @@ primary_need = st.multiselect(
         "Other (please specify)"
     ]
 )
-# primary_need = st.text_area("Primary business need (funding, networking, research, etc.)")
-business_type = st.selectbox("Type of business", ["Tech-based", "Research-based", "Traditional"])
-website = st.text_input("Company Website (optional)")
+
+# Show a text input if "Other" is selected
+other_primary_need = ""
+if "Other (please specify)" in primary_need:
+    other_primary_need = st.text_input("Please specify your primary business need")
+
+
 
 # Section: Upload supporting text (CV, Website content, etc.)
 # st.header("Upload Supporting Text")
