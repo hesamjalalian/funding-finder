@@ -5,6 +5,8 @@ from reportlab.pdfgen import canvas
 import io
 import streamlit as st
 
+available = genai.list_models()
+st.write("Available models:", available)
 
 st.markdown("<h5 style='text-align: center;'>O.S ©</h5>", unsafe_allow_html=True)
 
