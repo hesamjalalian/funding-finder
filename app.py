@@ -163,7 +163,26 @@ team_members = st.multiselect(
         "Other (please specify)"
     ]
 )
+annual_revenue = st.multiselect(
+    "Select your organization's approximate annual revenue:",
+    [
+        "$0 - $50k",
+        "$50k - $250k",
+        "$250k - $1M",
+        "$1M+",
+        "Other (please specify)"
+    ]
+)
 
+
+
+
+
+
+
+
+
+#################################################################
 st.subheader("Annual Operating Budget")
 
 annual_budget = st.multiselect(
@@ -181,16 +200,7 @@ annual_budget = st.multiselect(
 # annual_revenue = st.number_input("Annual revenue (USD)", min_value=0, step=1000)
 st.subheader("Annual Revenue")
 
-annual_revenue = st.multiselect(
-    "Select your organization's approximate annual revenue:",
-    [
-        "$0 - $50k",
-        "$50k - $250k",
-        "$250k - $1M",
-        "$1M+",
-        "Other (please specify)"
-    ]
-)
+
 st.subheader("Primary Business Need")
 
 primary_need = st.multiselect(
