@@ -166,7 +166,7 @@ business_status = st.multiselect(
     ]
 )
 website = st.text_input("Organization Website (Optional)")
-st.header("Tell Us About Your Organization")
+
 
 
 
