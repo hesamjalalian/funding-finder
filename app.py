@@ -15,7 +15,8 @@ with col2:
 
 
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
-model = genai.GenerativeModel("gemini-1.5-flash")
+# model = genai.GenerativeModel("gemini-1.5-flash")
+model = genai.GenerativeModel("models/gemini-2.5-pro-preview-03-25")
 
 st.title("The Mission Funding Accelerator")
 # st.markdown("**Stop Searching, Start Impacting. Unlock Your Next Funding Opportunity.**")
