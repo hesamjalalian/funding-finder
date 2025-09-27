@@ -170,7 +170,7 @@ website = st.text_input("Organization Website (Optional)")
 st.subheader("Describe Your Mission & Impact")
 
 
-# education = st.text_input("Educational background of founder(s)")
+education = st.text_input("Educational background of founder(s)")
 # minority_status = st.selectbox("Minority / underrepresented group status?", ["Yes", "No", "Prefer not to say"])
 # st.subheader("Business Registration Status")
 # num_employees = st.number_input("Number of employees", min_value=0, step=1)
