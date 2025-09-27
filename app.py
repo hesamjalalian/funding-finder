@@ -297,7 +297,7 @@ if st.button("Generate Funding Report"):
         Annual operating budget: {', '.join(annual_budget) if annual_budget else 'N/A'}.
         Annual revenue: {', '.join(annual_revenue) if annual_revenue else 'N/A'}.
         Primary business need: {', '.join(primary_need) if primary_need else 'N/A'}.
-        Type of business: {business_type}.
+        Type of business: {business_type if 'business_type' in locals() else 'N/A'}.
         Website: {website if website else 'N/A'}.
         Additional supporting details: {uploaded_summary if uploaded_summary else 'N/A'}.
 
