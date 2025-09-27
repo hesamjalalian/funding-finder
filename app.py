@@ -131,6 +131,38 @@ team_members = st.multiselect(
         "More than 50"
     ]
 )
+
+annual_revenue = st.multiselect(
+    "Select your organization's approximate annual revenue:",
+    [
+        "$0 - $50k",
+        "$50k - $250k",
+        "$250k - $1M",
+        "$1M+",
+        "Other (please specify)"
+    ]
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # education = st.text_input("Educational background of founder(s)")
 # minority_status = st.selectbox("Minority / underrepresented group status?", ["Yes", "No", "Prefer not to say"])
 # st.subheader("Business Registration Status")
@@ -152,37 +184,8 @@ business_status = st.multiselect(
 # num_employees = st.number_input("Number of employees", min_value=0, step=1)
 st.subheader("Number of Team Members (including volunteers)")
 
-team_members = st.multiselect(
-    "Select the size of your team:",
-    [
-        "Solo entrepreneur (self-employed / freelancer)",
-        "2 to 5",
-        "5 to 10",
-        "10 to 50",
-        "More than 50",
-        "Other (please specify)"
-    ]
-)
-annual_revenue = st.multiselect(
-    "Select your organization's approximate annual revenue:",
-    [
-        "$0 - $50k",
-        "$50k - $250k",
-        "$250k - $1M",
-        "$1M+",
-        "Other (please specify)"
-    ]
-)
 
 
-
-
-
-
-
-
-
-#################################################################
 st.subheader("Annual Operating Budget")
 
 annual_budget = st.multiselect(
