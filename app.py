@@ -77,17 +77,22 @@ if primary_focus == "Other (please specify)":
     if primary_focus_other:
         primary_focus = primary_focus_other
         
-minority_status = st.multiselect(
-    "Serving Minority / Underrepresented Group Status",
+serving_minority_status = st.multiselect(
+    "Serving Minority / Underrepresented Group Status (select all that apply)",
     [
-        "Indigenous Peoples / Aboriginal Peoples: First Nations, Inuit, or Métis (as per Canadian legal definitions of 'Aboriginal peoples')",
-        "Persons with Disabilities: Individuals with long-term or recurring physical, mental, sensory, psychiatric, or learning impairments",
-        "LGBTQ2+ Individuals: Lesbian, Gay, Bisexual, Transgender, Queer, Two-Spirit, or other diverse sexual orientations and gender identities",
-        "Other (please specify)"
+        "Indigenous Peoples / Aboriginal Peoples: Individuals identifying as First Nations, Inuit, or Métis (as per Canadian legal definitions of 'Aboriginal peoples').",
+        "Persons with Disabilities: Individuals with a long-term or recurring physical, mental, sensory, psychiatric, or learning impairment, including those whose functional limitations have been accommodated in their work or daily life.",
+        "LGBTQ2+ Individuals: Persons identifying as Lesbian, Gay, Bisexual, Transgender, Queer, Two-Spirit, or other diverse sexual orientations and gender identities.",
+        "Women / Girls",
+        "Youth (Ages 16-29)",
+        "Seniors (Ages 65+)",
+        "Low-Income / Economically Disadvantaged Individuals",
+        "Newcomers / Immigrants / Refugees",
+        "None of the above / Not applicable"
     ]
 )
 racialized_group = st.multiselect(
-    "Racialized Group (select all that apply, or specify):",
+    "Racialized Group (select all that apply)",
     [
         "South Asian",
         "Chinese",
@@ -99,15 +104,19 @@ racialized_group = st.multiselect(
         "West Asian",
         "Korean",
         "Japanese",
-        "Another racialized population group",
-        "Women / Girls",
-        "Youth (Ages 16-29)",
-        "Seniors (Ages 65+)",
-        "Low-Income / Economically Disadvantaged Individuals",
-        "Newcomers / Immigrants / Refugees",
-        "None of the above / Not applicable"
+        "Another racialized population group"
     ]
 )
+
+# If user selects "Another racialized population group", show a text box
+other_racialized = ""
+if "Another racialized population group" in racialized_group:
+    other_racialized = st.text_input("Please specify another racialized group:")
+
+# Final formatted output
+racialized_info = ", ".join(racialized_group)
+if other_racialized:
+    racialized_info += f" (Specified: {other_racialized})"
 city = st.text_input("City")
 country = st.text_input("Country")
 age_company = st.number_input("Age of Organization / Year Founded or to be Launched)", min_value=0, max_value=200, step=1)
