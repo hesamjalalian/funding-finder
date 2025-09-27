@@ -30,9 +30,9 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.caption("A complimentary tool from Operations.Sync — We helpyou Simplify & Accelerate Your Operations and Redeem your Time: automatewhat you can, humanize what you must.")
+st.caption("A complimentary tool from Operations.Sync — We help you Simplify & Accelerate Your Operations and Redeem your Time: automate what you can, humanize what you must.")
 
-st.write("Our AI scans hundreds of funds and grants to find the perfect match for your mission. Answer a few questions below to get a personalized report in minutes, get a curated list of opportunities perfectly matched to your mission and get back to the workthat matters.")
+st.write("Our AI scans hundreds of funds and grants to find the perfect match for your mission. Answer a few questions below to get a personalized report in minutes, get a curated list of opportunities perfectly matched to your mission and get back to the work that matters.")
 
     
 # Collect customer information
