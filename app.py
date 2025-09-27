@@ -77,7 +77,7 @@ if primary_focus == "Other (please specify)":
     if primary_focus_other:
         primary_focus = primary_focus_other
         
-serving_minority_status = st.multiselect(
+minority_status = st.multiselect(
     "Serving Minority / Underrepresented Group Status (select all that apply)",
     [
         "Indigenous Peoples / Aboriginal Peoples: Individuals identifying as First Nations, Inuit, or Métis (as per Canadian legal definitions of 'Aboriginal peoples').",
