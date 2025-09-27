@@ -170,46 +170,41 @@ website = st.text_input("Organization Website (Optional)")
 st.subheader("Step 2: Describe Your Mission & Impact")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # education = st.text_input("Educational background of founder(s)")
 # minority_status = st.selectbox("Minority / underrepresented group status?", ["Yes", "No", "Prefer not to say"])
 # st.subheader("Business Registration Status")
-
 # num_employees = st.number_input("Number of employees", min_value=0, step=1)
-st.subheader("Number of Team Members (including volunteers)")
 
-
-
-st.subheader("Annual Operating Budget")
-
-annual_budget = st.multiselect(
-    "Select your organization's approximate annual operating budget:",
+primary_community = st.multiselect(
+    "Primary Community You Serve",
     [
-        "$0 - $50k",
-        "$50k - $250k",
-        "$250k - $1M",
-        "$1M+",
-        "I do not wish to share",
+        "Youth & Young Adults",
+        "Seniors",
+        "Newcomers & Immigrants",
+        "Low-Income Families",
+        "Indigenous Communities",
+        "General Public",
         "Other (please specify)"
     ]
 )
 
-# annual_revenue = st.number_input("Annual revenue (USD)", min_value=0, step=1000)
-st.subheader("Annual Revenue")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 st.subheader("Primary Business Need")
