@@ -39,7 +39,7 @@ st.write("Our AI scans hundreds of funds and grants to find the perfect match fo
 
     
 # Collect customer information
-st.header("Customer & Startup Information")
+st.header("Enter your organization name")
 
 organization_name = st.text_input("Tell Us About Your Organization")
 
