@@ -121,9 +121,9 @@ city = st.text_input("City")
 province = st.text_input("Province / State")
 country = st.text_input("Country")
 age_company = st.number_input("Age of Organization / Year Founded or to be Launched)", min_value=0, max_value=200, step=1)
-team_size = st.select_slider(
+team_members = st.multiselect(
     "Number of Team Members (including volunteers)",
-    options=[
+    [
         "Solo entrepreneur (self-employed / freelancer)",
         "2 to 5",
         "5 to 10",
