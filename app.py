@@ -118,6 +118,7 @@ racialized_info = ", ".join(racialized_group)
 if other_racialized:
     racialized_info += f" (Specified: {other_racialized})"
 city = st.text_input("City")
+province = st.text_input("Province / State")
 country = st.text_input("Country")
 age_company = st.number_input("Age of Organization / Year Founded or to be Launched)", min_value=0, max_value=200, step=1)
 education = st.text_input("Educational background of founder(s)")
