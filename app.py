@@ -5,9 +5,6 @@ from reportlab.pdfgen import canvas
 import io
 import streamlit as st
 
-available = genai.list_models()
-st.write("Available models:", available)
-
 st.markdown("<h5 style='text-align: center;'>O.S ©</h5>", unsafe_allow_html=True)
 
 ## logo
@@ -24,7 +21,7 @@ with col2:
 # model = genai.GenerativeModel("gemini-1.5-flash")
 
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
-model = genai.GenerativeModel("models/gemini-1.5-flash-001")
+model = genai.GenerativeModel("gemini-1.5-flash")
 
 st.title("The Mission Funding Accelerator")
 # st.markdown("**Stop Searching, Start Impacting. Unlock Your Next Funding Opportunity.**")
