@@ -432,6 +432,49 @@ consent = st.checkbox("I agree to receive this report and occasional insights fr
 
 
 # ---------------- Generate Report ----------------
+
+
+#########################################33
+# if st.button("Generate Funding Report"):
+#     if not city or not country:
+#         st.error("Please provide at least city and country to continue.")
+#     elif not consent:
+#         st.error("You must agree to receive the report before generating it.")
+#     else:
+#         # Build AI prompt
+#         prompt = f"""
+#         The startup is located in {city}, {country}.
+#         Age of company: {age_company} years.
+#         Educational background of founders: {education}.
+#         Minority / underrepresented status: {', '.join(minority_status) if minority_status else 'N/A'}.
+#         Racialized group / other: {', '.join(racialized_group) if racialized_group else 'N/A'}.
+#         Business registration: {', '.join(business_status) if business_status else 'N/A'}.
+#         Team size: {', '.join(team_members) if team_members else 'N/A'}.
+#         Annual operating budget: {', '.join(annual_budget) if annual_budget else 'N/A'}.
+#         Annual revenue: {', '.join(annual_revenue) if annual_revenue else 'N/A'}.
+#         Primary business need: {', '.join(primary_need) if primary_need else 'N/A'}.
+#         Type of business: {business_type}.
+#         Website: {website if website else 'N/A'}.
+#         Additional supporting details: {uploaded_summary if uploaded_summary else 'N/A'}.
+
+#         Task:
+#         Provide 20 funding opportunities for this startup. 
+#         Format the response in 20 numbered paragraphs. 
+#         For each paragraph:
+#         1. Name of the organization providing the fund
+#         2. Link to the website
+#         3. Short explanation why this fund fits the startup
+#         """
+
+#         try:
+#             with st.spinner("Generating report..."):
+#                 response = model.generate_content(prompt)
+#                 report_text = response.text
+
+#             # Append customer info at the end
+#             customer_info = f"""
+
+# ---------------- Generate Report ----------------
 if st.button("Generate Funding Report"):
     # Basic validation
     if not city or not country:
@@ -486,46 +529,6 @@ if st.button("Generate Funding Report"):
 
             # Append customer info at the end
             customer_info = f"""
-
-
-# if st.button("Generate Funding Report"):
-#     if not city or not country:
-#         st.error("Please provide at least city and country to continue.")
-#     elif not consent:
-#         st.error("You must agree to receive the report before generating it.")
-#     else:
-#         # Build AI prompt
-#         prompt = f"""
-#         The startup is located in {city}, {country}.
-#         Age of company: {age_company} years.
-#         Educational background of founders: {education}.
-#         Minority / underrepresented status: {', '.join(minority_status) if minority_status else 'N/A'}.
-#         Racialized group / other: {', '.join(racialized_group) if racialized_group else 'N/A'}.
-#         Business registration: {', '.join(business_status) if business_status else 'N/A'}.
-#         Team size: {', '.join(team_members) if team_members else 'N/A'}.
-#         Annual operating budget: {', '.join(annual_budget) if annual_budget else 'N/A'}.
-#         Annual revenue: {', '.join(annual_revenue) if annual_revenue else 'N/A'}.
-#         Primary business need: {', '.join(primary_need) if primary_need else 'N/A'}.
-#         Type of business: {business_type}.
-#         Website: {website if website else 'N/A'}.
-#         Additional supporting details: {uploaded_summary if uploaded_summary else 'N/A'}.
-
-#         Task:
-#         Provide 20 funding opportunities for this startup. 
-#         Format the response in 20 numbered paragraphs. 
-#         For each paragraph:
-#         1. Name of the organization providing the fund
-#         2. Link to the website
-#         3. Short explanation why this fund fits the startup
-#         """
-
-#         try:
-#             with st.spinner("Generating report..."):
-#                 response = model.generate_content(prompt)
-#                 report_text = response.text
-
-#             # Append customer info at the end
-#             customer_info = f"""
 -------------------------------
 Customer Information
 
@@ -553,9 +556,8 @@ Website: {website if website else 'N/A'}
 """
             full_report = report_text + "\n\n" + customer_info
 
-            # Display on Streamlit
+            # Display on Streamlit with line breaks
             st.subheader("Funding Report")
-            # preserve line breaks for readability
             st.markdown(full_report.replace("\n", "  \n"))
 
             # Export to PDF
@@ -564,7 +566,6 @@ Website: {website if website else 'N/A'}
             pdf.setFont("Helvetica", 10)
             text_object = pdf.beginText(40, 750)
             for line in full_report.split("\n"):
-                # Add new page if text reaches bottom
                 if text_object.getY() < 50:
                     pdf.drawText(text_object)
                     pdf.showPage()
@@ -584,4 +585,3 @@ Website: {website if website else 'N/A'}
 
         except Exception as e:
             st.error(f"Error generating report: {e}")
-
