@@ -5,6 +5,9 @@ from reportlab.pdfgen import canvas
 import io
 import streamlit as st
 
+
+st.markdown("<h5 style='text-align: center;'>O.S ©</h5>", unsafe_allow_html=True)
+
 ## logo
 col1, col2, col3 = st.columns([1,3,1])  # middle column is bigger
 with col2:
