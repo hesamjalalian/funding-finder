@@ -142,9 +142,31 @@ annual_revenue = st.multiselect(
         "Other (please specify)"
     ]
 )
-
-
-
+annual_budget = st.multiselect(
+    "Annual Operating Budget",
+    [
+        "$0 - $50k",
+        "$50k - $250k",
+        "$250k - $1M",
+        "$1M+"
+    ]
+)
+business_status = st.multiselect(
+    "Select your business registration status:",
+    [
+        "Not yet registered / Informal Group",
+        "Sole Proprietorship / Auto-entreprise",
+        "Partnership (General or Limited)",
+        "Limited Liability Company (LLC) / Société à Responsabilité Limitée (SARL)",
+        "For-Profit Corporation / Société par Actions",
+        "Non-Profit Organization / Organisme à But Non Lucratif (OBNL)",
+        "Registered Charity / Organisme de Bienfaisance Enregistré",
+        "Cooperative / Coopérative",
+        "Other (please specify)"
+    ]
+)
+website = st.text_input("Organization Website (Optional)")
+st.subheader("Step 2: Describe Your Mission & Impact")
 
 
 
