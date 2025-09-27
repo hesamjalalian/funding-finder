@@ -39,9 +39,9 @@ st.write("Our AI scans hundreds of funds and grants to find the perfect match fo
 
     
 # Collect customer information
-st.header("Enter your organization name")
+st.header("Tell Us About Your Organization")
 
-organization_name = st.text_input("Tell Us About Your Organization")
+organization_name = st.text_input("Enter your organization name")
 
 primary_focus = st.selectbox(
     "Primary Focus",
