@@ -70,6 +70,13 @@ primary_focus = st.selectbox(
         "Other (please specify)"
     ]
 )
+
+# text input in the case of selecting other
+if primary_focus == "Other (please specify)":
+    primary_focus_other = st.text_input("Please specify your organization's primary focus")
+    if primary_focus_other:
+        primary_focus = primary_focus_other
+        
 minority_status = st.multiselect(
     "Serving Minority / Underrepresented Group Status",
     [
