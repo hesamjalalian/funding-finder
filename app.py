@@ -131,9 +131,9 @@ team_members = st.multiselect(
         "More than 50"
     ]
 )
-education = st.text_input("Educational background of founder(s)")
+# education = st.text_input("Educational background of founder(s)")
 # minority_status = st.selectbox("Minority / underrepresented group status?", ["Yes", "No", "Prefer not to say"])
-st.subheader("Business Registration Status")
+# st.subheader("Business Registration Status")
 
 business_status = st.multiselect(
     "Select your business registration status:",
